@@ -201,14 +201,14 @@ software_dominio() {
 inquiry_options() {
   
   print_banner
-  printf "${WHITE} 💻 Bem vindo(a) ao Gerenciador Equipechat - Atendimento sem limites, selecione abaixo a proxima ação!${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Bienvenido a HybsChaT Manager - Soporte ilimitado, seleccione la siguiente acción a continuación!${GRAY_LIGHT}"
   printf "\n\n"
-  printf "   [0] Instalar Equipechat\n"
-  printf "   [1] Atualizar Equipechat\n"
-  printf "   [2] Deletar Equipechat\n"
-  printf "   [3] Bloquear Equipechat\n"
-  printf "   [4] Desbloquear Equipechat\n"
-  printf "   [5] Alter. dominio Equipechat\n"
+  printf "   [0] Instalar HybsChaT\n"
+  printf "   [1] Atualizar HybsChaT\n"
+  printf "   [2] Borrar HybsChaT\n"
+  printf "   [3] Bloquear HybsChaT\n"
+  printf "   [4] Desbloquear HybsChaT\n"
+  printf "   [5] Alterar. dominio HybsChaT\n"
   printf "\n"
   read -p "> " option
 
