@@ -15,7 +15,8 @@ system_create_user() {
   sleep 2
 
   sudo su - root <<EOF
-  useradd -m -p $(openssl passwd -crypt ${mysql_root_password}) -s /bin/bash -G sudo deploy
+  useradd -m -s /bin/bash -G sudo deploy
+  echo "deploy:${mysql_root_password}" | chpasswd
   usermod -aG sudo deploy
 EOF
 
@@ -36,7 +37,8 @@ system_git_clone() {
   sleep 2
 
   sudo su - deploy <<EOF
-  git clone ${link_git} /home/deploy/${instancia_add}/
+  sudo git clone ${link_git} /home/deploy/${instancia_add}/
+
 EOF
 
   sleep 2
