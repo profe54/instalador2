@@ -36,10 +36,19 @@ system_git_clone() {
 
   sleep 2
 
-  sudo su - deploy <<EOF
-  sudo git clone ${link_git} /home/deploy/${instancia_add}/
+  if [ -d "/home/deploy/${instancia_add}" ]; then
+    sudo rm -rf /home/deploy/${instancia_add}
+  fi
 
-EOF
+  sudo git clone "${link_git}" "/home/deploy/${instancia_add}"
+  sudo chown -R deploy:deploy "/home/deploy/${instancia_add}"
+
+  if [ ! -d "/home/deploy/${instancia_add}" ]; then
+    echo "Error: No se pudo clonar el repositorio"
+    exit 1
+  fi
+
+  echo "Repositorio clonado exitosamente"
 
   sleep 2
 }
